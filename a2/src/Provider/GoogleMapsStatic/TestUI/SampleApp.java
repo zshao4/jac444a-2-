@@ -85,8 +85,9 @@ private void _setupTask() {
       // get the uri for the static map
       String uri = MapLookup.getMap(Double.parseDouble(ttfLat.getText()),
                                     Double.parseDouble(ttfLon.getText()),
-                                    Integer.parseInt(ttfSizeW.getText()),
-                                    Integer.parseInt(ttfSizeH.getText()),
+                                    //TODO modified
+                                    Integer.parseInt(ttfSizeW.getValue()),
+                                    Integer.parseInt(ttfSizeH.getValue()),
                                     Integer.parseInt(ttfZoom.getText())
       );
       sout("Google Maps URI=" + uri);
@@ -291,12 +292,15 @@ private void initComponents() {
   contentPanel = new JPanel();
   panel1 = new JPanel();
   label2 = new JLabel();
-  ttfSizeW = new JTextField();
+  //modified
+  //TODO
+  ttfSizeW = new Spinner();
   label4 = new JLabel();
   ttfLat = new JTextField();
   btnGetMap = new JButton();
   label3 = new JLabel();
-  ttfSizeH = new JTextField();
+  //TODO
+  ttfSizeH = new Spinner();
   label5 = new JLabel();
   ttfLon = new JTextField();
   btnQuit = new JButton();
@@ -354,7 +358,7 @@ private void initComponents() {
   			panel1.add(label2, new TableLayoutConstraints(0, 0, 0, 0, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
   			//---- ttfSizeW ----
-  			ttfSizeW.setText("512");
+  			ttfSizeW = new Spinner();
   			panel1.add(ttfSizeW, new TableLayoutConstraints(1, 0, 1, 0, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
   			//---- label4 ----
@@ -383,7 +387,7 @@ private void initComponents() {
   			panel1.add(label3, new TableLayoutConstraints(0, 1, 0, 1, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
   			//---- ttfSizeH ----
-  			ttfSizeH.setText("512");
+  			ttfSizeH = new Spinner();
   			panel1.add(ttfSizeH, new TableLayoutConstraints(1, 1, 1, 1, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
   			//---- label5 ----
@@ -505,12 +509,14 @@ private JPanel dialogPane;
 private JPanel contentPanel;
 private JPanel panel1;
 private JLabel label2;
-private JTextField ttfSizeW;
+//TODO
+private Spinner ttfSizeW;
 private JLabel label4;
 private JTextField ttfLat;
 private JButton btnGetMap;
 private JLabel label3;
-private JTextField ttfSizeH;
+//TODO
+private Spinner ttfSizeH;
 private JLabel label5;
 private JTextField ttfLon;
 private JButton btnQuit;
